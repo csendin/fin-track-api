@@ -8,4 +8,4 @@ export const periodSchema = z.union([
     z.literal('YEARLY'),
 ])
 
-export type PeriodSchema = z.infer<typeof periodSchema>
+export type Period = z.infer<typeof periodSchema>

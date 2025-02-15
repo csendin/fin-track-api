@@ -10,4 +10,4 @@ export const categorySchema = z.union([
     z.literal('OTHER'),
 ])
 
-export type category = z.infer<typeof categorySchema>
+export type Category = z.infer<typeof categorySchema>
