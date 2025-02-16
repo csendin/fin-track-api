@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "tsx watch src/infra/server.ts",
-    "format": "biome check --write src test"
+    "format": "biome check --write src test",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "license": "MIT",
   "dependencies": {
