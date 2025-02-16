@@ -14,6 +14,49 @@ export interface BudgetProps {
 }
 
 export class Budget extends Entity<BudgetProps> {
+    get category() {
+        return this.props.category
+    }
+
+    set category(category: Category) {
+        this.props.category = category
+        this.touch()
+    }
+
+    get limit() {
+        return this.props.limit
+    }
+
+    set limit(limit: number) {
+        this.props.limit = limit
+        this.touch()
+    }
+
+    get period() {
+        return this.props.period
+    }
+
+    set period(period: Period) {
+        this.props.period = period
+        this.touch()
+    }
+
+    get createdAt() {
+        return this.props.createdAt
+    }
+
+    get updatedAt() {
+        return this.props.updatedAt
+    }
+
+    get userId() {
+        return this.props.userId
+    }
+
+    private touch() {
+        this.props.updatedAt = new Date()
+    }
+
     static create(props: Optional<BudgetProps, 'createdAt' | 'updatedAt'>, id?: UniqueEntityId) {
         const budget = new Budget(
             {
